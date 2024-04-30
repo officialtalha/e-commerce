@@ -1,0 +1,23 @@
+.sidebar {
+    min-height: 100vh;
+}
+
+.info-box {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.info-box h2 {
+    margin-bottom: 10px;
+}
+
+.info-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.info-list li {
+    margin-bottom: 5px;
+}

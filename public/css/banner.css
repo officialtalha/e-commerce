@@ -1,0 +1,11 @@
+.banner {
+    background-image: url("https://img.freepik.com/free-vector/flat-horizontal-sale-banner-template-with-photo_23-2149000923.jpg?w=1380&t=st=1714477463~exp=1714478063~hmac=40d3a8c72819e127693668e1ac8e518f861e6203862851614d2348dcacdb9152");
+    background-size: cover;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+}

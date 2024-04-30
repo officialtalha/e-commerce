@@ -1,0 +1,22 @@
+.footer {
+    background-color: #dedcd9;
+    padding: 30px 0;
+}
+
+.footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer ul li a {
+    color: #6c757d;
+    text-decoration: none;
+}
+
+.footer ul li a:hover {
+    color: #343a40;
+}

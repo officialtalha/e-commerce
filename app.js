@@ -12,9 +12,11 @@ app.use(express.static('public'));
 //importing routes
 const signUpRoute = require('./routes/signUpRoute');
 const loginRoute = require('./routes/loginRoute');
+const productRoute = require('./routes/productRoute');
 //handling routes 
 app.use('/signup', signUpRoute);
 app.use('/login', loginRoute);
+app.use('/product', productRoute);
 //setup async IIFE function to run the server with database connection
 (async () => {
     try {
