@@ -14,11 +14,13 @@ const signUpRoute = require('./routes/signUpRoute');
 const loginRoute = require('./routes/loginRoute');
 const productRoute = require('./routes/productRoute');
 const userRoute = require('./routes/userRoute');
+const cartRoute = require('./routes/cartRoute');
 //handling routes 
 app.use('/signup', signUpRoute);
 app.use('/login', loginRoute);
 app.use('/product', productRoute);
 app.use('/user', userRoute);
+app.use('/cart', cartRoute);
 //setup async IIFE function to run the server with database connection
 (async () => {
     try {
