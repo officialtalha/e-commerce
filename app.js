@@ -7,10 +7,12 @@ const app = express();
 const dbConnect = require('./util/database');
 //setup server port number
 const PORT = 3000 || process.env.PORT;
-
+//serving static file 
 app.use(express.static('public'));
-
-
+//importing routes
+const signUpRoute = require('./routes/signUpRoutes');
+//handling routes 
+app.use('/signup', signUpRoute);
 //setup async IIFE function to run the server with database connection
 (async () => {
     try {
