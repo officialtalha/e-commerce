@@ -19,11 +19,11 @@ form.addEventListener('submit', async (e) => {
         if (result.data.message == 'login successfull' && result.data.success == true) {
             aleartMsg.innerText = 'login successfull';
             aleartMsg.style.color = 'green';
-            const token = {
+            const info = {
                 token: result.data.token,
                 name: result.data.name
             }
-            localStorage.setItem("user", JSON.stringify(token));
+            localStorage.setItem("user", JSON.stringify(info));
             setTimeout(() => {
                 window.location.href = './home.html'
             }, 2000);

@@ -15,6 +15,7 @@ form.addEventListener('submit', async (e) => {
         }
         console.log(productDetails);
         await axios.post('http://localhost:3000/product', productDetails);
+        window.location.reload();
     } catch (err) {
         console.log(err);
     }
