@@ -14,7 +14,7 @@ form.addEventListener('submit', async (e) => {
             aleartMsg.style.color = 'red';
         }
         if (result.data.message == 'signup successfull' && result.data.success == true) {
-            aleartMsg.innerText = 'signup successfull';
+            aleartMsg.innerText = 'sign up successfull';
             aleartMsg.style.color = 'green';
             setTimeout(() => {
                 window.location.href = './login.html'

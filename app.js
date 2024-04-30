@@ -10,9 +10,11 @@ const PORT = 3000 || process.env.PORT;
 //serving static file 
 app.use(express.static('public'));
 //importing routes
-const signUpRoute = require('./routes/signUpRoutes');
+const signUpRoute = require('./routes/signUpRoute');
+const loginRoute = require('./routes/loginRoute');
 //handling routes 
 app.use('/signup', signUpRoute);
+app.use('/login', loginRoute);
 //setup async IIFE function to run the server with database connection
 (async () => {
     try {
