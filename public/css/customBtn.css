@@ -12,8 +12,16 @@
     /* Darker coral color */
 }
 
-/* for search button */
+.custom-danger-btn {
+    background-color: #f22323;
+    /* Coral color */
+    color: #ffffff;
+    /* White text */
+}
 
-.search-btn {
-    width: 130px;
+/* Style for the button on hover */
+.custom-danger-btn:hover {
+    background-color: #f64545;
+    color: #ffffff;
+    /* Darker coral color */
 }

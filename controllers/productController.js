@@ -35,7 +35,6 @@ exports.productControllerPostCart = async (req, res) => {
             productId: prodId
         });
         const result = await newUsersProducts.save();
-        console.log(result);
         res.status(200).json({ message: result, success: true });
     } catch (err) {
         console.log(err);

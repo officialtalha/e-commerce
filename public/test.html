@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-md-3">
+        <img src="${getCartProducts.data.message[item].image}" alt="Product Image" class="img-fluid">
+    </div>
+    <div class="col-md-6">
+        <h5>${getCartProducts.data.message[item].name}</h5>
+        <p>Price: ₹ ${getCartProducts.data.message[item].price}</p>
+    </div>
+    <div class="col-md-3">
+        <button id="remove-btn" class="btn btn-danger btn-sm">Remove</button>
+    </div>
+</div>
+<hr>

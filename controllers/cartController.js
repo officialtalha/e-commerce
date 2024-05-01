@@ -21,5 +21,19 @@ exports.cartControllerGet = async (req, res) => {
         res.status(200).json({ message: allCartProducts, success: true });
     } catch (err) {
         console.log(err);
+        res.status(500).json({ message: err, success: false });
+    }
+};
+
+exports.cartControllerDeleteProd = async (req, res) => {
+    try {
+        const productId = new mongoose.Types.ObjectId(req.params.prodId);
+        const userId = new mongoose.Types.ObjectId(req.user);
+
+        const result = await usersProducts.deleteOne({ userId, productId });
+        res.status(200).json({ message: result, success: true });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ message: err, success: false });
     }
 };
