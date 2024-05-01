@@ -14,11 +14,11 @@ form.addEventListener('submit', async (e) => {
             aleartMsg.style.color = 'red';
         }
         if (result.data.message == 'signup successfull' && result.data.success == true) {
-            aleartMsg.innerText = 'sign up successfull';
+            aleartMsg.innerText = 'success';
             aleartMsg.style.color = 'green';
             setTimeout(() => {
                 window.location.href = './login.html'
-            }, 2000);
+            }, 1000);
         }
     } catch (e) {
         console.log(e);

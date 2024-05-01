@@ -17,7 +17,7 @@ form.addEventListener('submit', async (e) => {
             aleartMsg.style.color = 'red';
         }
         if (result.data.message == 'login successfull' && result.data.success == true) {
-            aleartMsg.innerText = 'login successfull';
+            aleartMsg.innerText = 'success';
             aleartMsg.style.color = 'green';
             const info = {
                 token: result.data.token,
@@ -26,7 +26,7 @@ form.addEventListener('submit', async (e) => {
             localStorage.setItem("user", JSON.stringify(info));
             setTimeout(() => {
                 window.location.href = './home.html'
-            }, 2000);
+            }, 1000);
         }
     } catch (e) {
         console.log(e);
