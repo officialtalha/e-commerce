@@ -79,10 +79,10 @@ if (!ifLoggedIn) {
                 }
                 totalItem++;
             }
-
+            let subtotal = 0;
             // Function to calculate cart subtotal and total
             function calculateTotal() {
-                let subtotal = 0;
+
                 getCartProducts.data.message.forEach(item => {
                     const priceArray = item.price.split(',');
                     const price = priceArray.join('');
@@ -109,6 +109,12 @@ if (!ifLoggedIn) {
             // Initial render
             // renderCartItems();
             calculateTotal();
+
+            //checkout coe
+            document.getElementById('checkout-products').addEventListener('click', (e) => {
+                localStorage.setItem('checkout', JSON.stringify(subtotal));
+                window.location.href = './checkout.html';
+            });
         } catch (err) {
             console.log(err);
         }
