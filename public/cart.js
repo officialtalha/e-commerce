@@ -114,8 +114,4 @@ if (!ifLoggedIn) {
             console.log(err);
         }
     })();
-
-
-
-
 }
