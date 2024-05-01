@@ -19,7 +19,8 @@ if (!ifLoggedIn) {
             // render cart items
             const cartItemsContainer = document.getElementById('cartItems');
             cartItemsContainer.innerHTML = '';
-            for (let item in getCartProducts.data.message) {
+            let totalItem = 0;
+            for (item in getCartProducts.data.message) {
                 const itemElement = document.createElement('div');
                 itemElement.classList.add('mb-3');
 
@@ -69,7 +70,7 @@ if (!ifLoggedIn) {
                 cartItemsContainer.appendChild(itemElement);
 
                 button.onclick = async () => {
-                    const result = await axios.delete(`http://localhost:3000/cart/${getCartProducts.data.message[item]._id}`, {
+                    await axios.delete(`http://localhost:3000/cart/${getCartProducts.data.message[item]._id}`, {
                         headers: {
                             'Content-Type': 'application/json',
                             'Authorization': token
@@ -77,8 +78,8 @@ if (!ifLoggedIn) {
                     });
                     window.location.reload();
                 }
+                totalItem++;
             }
-
 
             // Function to calculate cart subtotal and total
             function calculateTotal() {
@@ -89,18 +90,21 @@ if (!ifLoggedIn) {
                     subtotal += parseInt(price);
                 });
                 document.getElementById('subtotal').textContent = `₹ ${subtotal}`;
+                document.getElementById('total-items').textContent = `${totalItem}`;
                 // Add shipping calculation if needed
                 document.getElementById('total').textContent = `₹ ${subtotal}`;
             }
 
             // Clear cart button event listener
             document.getElementById('clearCartBtn').addEventListener('click', async () => {
-                const result = await axios.delete(`http://localhost:3000/cart/${getCartProducts.data.message[item]._id}`, {
+                alert('all the item will be deleted from the cart.');
+                await axios.delete(`http://localhost:3000/cart`, {
                     headers: {
                         'Content-Type': 'application/json',
                         'Authorization': token
                     }
                 });
+                window.location.reload();
             });
 
             // Initial render

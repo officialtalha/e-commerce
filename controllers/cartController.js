@@ -30,8 +30,19 @@ exports.cartControllerDeleteProd = async (req, res) => {
         const productId = new mongoose.Types.ObjectId(req.params.prodId);
         const userId = new mongoose.Types.ObjectId(req.user);
 
-        const result = await usersProducts.deleteOne({ userId, productId });
-        res.status(200).json({ message: result, success: true });
+        await usersProducts.deleteOne({ userId, productId });
+        res.status(200).json({ success: true });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json({ message: err, success: false });
+    }
+};
+exports.cartControllerDeleteFullCart = async (req, res) => {
+    try {
+        const userId = new mongoose.Types.ObjectId(req.user);
+
+        await usersProducts.deleteMany({ userId });
+        res.status(200).json({ success: true });
     } catch (err) {
         console.log(err);
         res.status(500).json({ message: err, success: false });
