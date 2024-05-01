@@ -41,9 +41,19 @@ let token;
                 a.className = 'btn custom-btn';
                 a.textContent = 'Add to Cart';
 
+                const a1 = document.createElement('a');
+                a1.id = 'product-detail';
+                a1.className = 'btn custom-btn';
+                a1.textContent = 'Detail';
+
+                const span = document.createElement('span');
+                span.textContent = '   ';
+
                 div3.appendChild(h5);
                 div3.appendChild(p);
                 div3.appendChild(a);
+                div3.appendChild(span);
+                div3.appendChild(a1);
 
                 div2.appendChild(img);
                 div2.appendChild(div3);
@@ -60,6 +70,18 @@ let token;
                     } catch (err) {
                         console.log(err);
                     }
+                }
+
+                //product details
+                a1.onclick = async () => {
+                    const result = await axios.get(`http://localhost:3000/product/${product._id}`, {
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Authorization': token
+                        }
+                    });
+                    localStorage.setItem('prodDetail', JSON.stringify(result.data.message));
+                    window.location.href = './productdetail.html';
                 }
             } catch (err) {
                 console.log(err);

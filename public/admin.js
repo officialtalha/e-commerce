@@ -12,8 +12,8 @@ form.addEventListener('submit', async (e) => {
             name: document.getElementById('productName').value,
             image: document.getElementById('productImage').value,
             price: document.getElementById('productPrice').value,
+            description: document.getElementById('productDescription').value,
         }
-        console.log(productDetails);
         await axios.post('http://localhost:3000/product', productDetails);
         window.location.reload();
     } catch (err) {

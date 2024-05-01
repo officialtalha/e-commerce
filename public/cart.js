@@ -14,7 +14,6 @@ if (!ifLoggedIn) {
                 }
             });
             const getCartProducts = await axios.get(`http://localhost:3000/cart/${userInfo.data.message._id}`);
-            // console.log(getCartProducts.data.message);
 
             // render cart items
             const cartItemsContainer = document.getElementById('cartItems');
